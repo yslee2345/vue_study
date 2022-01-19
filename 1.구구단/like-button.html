@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Like</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div v-if="liked === true">좋아요 눌렀음</div>
+        <div v-if="liked === false">좋아요 안눌렀음</div>
+<!--        <div v-else>안좋아요</div>-->
+        <button v-on:click="onClickButton">Like</button>
+    </div>
+
+</body>
+<script>
+
+    const app = new Vue({
+        el: "#root",
+        data: {
+            liked: false,
+        },
+        methods: {
+            onClickButton() {
+                this.liked = true;
+            }
+        }
+    });
+
+</script>
+</html>
